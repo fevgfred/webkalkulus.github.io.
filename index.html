@@ -8,8 +8,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="gaya.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>.: WEB PROJEK KALKULUS :.</title>
   </head>
   <body style="background-color: moccasin">
@@ -32,9 +30,13 @@
             &nbsp;&nbsp;&nbsp;Fungsi Linear adalah sebuah fungsi yang menyajikan data grafik
             bersifat garis lurus dan memiliki pangkat satu. Rumus fungsi linear
             dinamakan juga rumus persamaan garis lurus disingkat pgl.
-            Fungsi ini memiliki bentuk umum f(x) = mx + c. Pada rumus
+            Fungsi ini memiliki bentuk umum <u> f(x) = mx + c. </u> Pada rumus
             fungsi linear ada tiga hal yang wajib untuk dipelajari yaitu
-            konstanta, koefisien, dan variabel.
+            <i>konstanta, koefisien, dan variabel</i>. <br> &nbsp;&nbsp;&nbsp;<i>Variabel</i> merupakan bagian 
+            yang nilainya berubah-ubah sesuai situasi.
+            <i>Koefisien</i> merupakan bilangan atau angka yang terdapat di posisi depan dari variabel atau 
+            bilangan yang berhubungan dengan variabel. Sedangkan <i>konstanta</i> adalah hal yang tak mempunyai 
+            kaitan dengan apa saja seperti variabel.
           </p>
         </header>
       </div>
@@ -64,33 +66,6 @@
         duration: 1000,
         easing: "",
         delay: 1000,
-      });
-
-    // Wrap every letter in a span
-    var textWrapper = document.querySelector(".glowIn");
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
-
-    anime
-      .timeline({ loop: true })
-      .add({
-        targets: ".glowIn .letter",
-        translateX: [40, 0],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: "easeOutExpo",
-        duration: 1200,
-        delay: (el, i) => 500 + 3 * i,
-      })
-      .add({
-        targets: ".glowIn .letter",
-        translateX: [0, -30],
-        opacity: [1, 0],
-        easing: "easeInExpo",
-        duration: 1100,
-        delay: (el, i) => 100 + 30 * i,
       });
   </script>
 </html>
