@@ -34,15 +34,16 @@
 
       <div class="form-group">
           <label for="inputSlope">Masukkan kemiringan (a):</label>
-          <input type="text" class="form-control" id="inputSlope" placeholder="Misal: 2">
+          <input type="text" class="form-control" id="inputSlope" placeholder="Contoh 2">
       </div>
 
       <div class="form-group">
           <label for="inputIntercept">Masukkan perpotongan (b):</label>
-          <input type="text" class="form-control" id="inputIntercept" placeholder="Misal: 1">
+          <input type="text" class="form-control" id="inputIntercept" placeholder="Contoh 1">
       </div>
 
-      <button class="btn btn-primary mb-3" onclick="tampilkanGrafik()">Tampilkan Grafik</button>
+      <div id="liveAlertPlaceholder"></div>
+      <button class="btn btn-primary mb-3" onclick="tampilkanGrafik()" id="liveAlertBtn">Tampilkan Grafik</button>
 
       <div class="mt-3">
           <div id="grafikLinear"></div>
@@ -88,6 +89,25 @@
 
           Plotly.newPlot('grafikLinear', [trace], layout);
       }
+
+          const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const appendAlert = (message, type) => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '</div>'
+      ].join('')
+
+      alertPlaceholder.append(wrapper)
+    }
+
+    const alertTrigger = document.getElementById('liveAlertBtn')
+    if (alertTrigger) {
+      alertTrigger.addEventListener('click', () => {
+        appendAlert('Persamaan yang didapat yaitu f(x)= '+ document.getElementById('inputSlope').value +'x + ' + document.getElementById('inputIntercept').value, 'success')
+      })
+    }
   </script>
   </body>
 </html>
